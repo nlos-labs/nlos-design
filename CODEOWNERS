@@ -1,11 +1,12 @@
 # NLOS Design System
 * @nlos-labs/design-team @nlos-labs/frontend-team
 
+# Design Tokens
+/tokens/ @nlos-labs/design-team
+
 # Components
-/src/components/ @nlos-labs/frontend-team
+/src/components/ @nlos-labs/frontend-team @nlos-labs/design-team
 
-# Styles
-/src/styles/ @nlos-labs/design-team
+# Tailwind Config
+/tailwind.config.* @nlos-labs/design-team
 
-# Storybook
-/.storybook/ @nlos-labs/frontend-team
