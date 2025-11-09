@@ -1,0 +1,11 @@
+# NLOS Design System
+* @nlos-labs/design-team @nlos-labs/frontend-team
+
+# Components
+/src/components/ @nlos-labs/frontend-team
+
+# Styles
+/src/styles/ @nlos-labs/design-team
+
+# Storybook
+/.storybook/ @nlos-labs/frontend-team
