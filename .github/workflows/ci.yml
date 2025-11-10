@@ -13,16 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'pnpm'
-          
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
           
       - name: Install dependencies
         run: pnpm install
@@ -33,34 +33,39 @@ jobs:
       - name: Check formatting
         run: pnpm format:check
 
+  typecheck:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Type check
+        run: pnpm typecheck
+
   test:
     name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'pnpm'
-          
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
-      - name: Install dependencies
-        run: pnpm install
-        
-      - name: Run tests
-        run: pnpm test
-
-  build-storybook:
-    name: Build Storybook
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -68,13 +73,35 @@ jobs:
           node-version: '18'
           cache: 'pnpm'
           
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Run tests
+        run: pnpm test
+        
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: always()
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
           
       - name: Install dependencies
         run: pnpm install
         
-      - name: Build Storybook
-        run: pnpm build-storybook
+      - name: Build
+        run: pnpm build
