@@ -1,12 +1,39 @@
-# NLOS Design System
-* @nlos-labs/design-team @nlos-labs/frontend-team
+# NLOS Design - Design System & UI Components
+# Default owners for everything in the repo
+* @nlos-labs/frontend-team @nlos-labs/design-team
 
-# Design Tokens
-/tokens/ @nlos-labs/design-team
-
-# Components
+# Source Code
+/src/ @nlos-labs/frontend-team
 /src/components/ @nlos-labs/frontend-team @nlos-labs/design-team
+/web/ @nlos-labs/frontend-team
 
-# Tailwind Config
-/tailwind.config.* @nlos-labs/design-team
+# Styles & Themes
+/src/styles/ @nlos-labs/design-team
+/src/themes/ @nlos-labs/design-team
+/styles/ @nlos-labs/design-team
 
+# Configuration
+/config/ @nlos-labs/devops-team @nlos-labs/frontend-team
+.env.example @nlos-labs/devops-team
+
+# Scripts & DevOps
+/scripts/ @nlos-labs/devops-team
+
+# CI/CD
+/.github/workflows/ @nlos-labs/devops-team
+/.github/actions/ @nlos-labs/devops-team
+
+# Documentation
+/docs/ @nlos-labs/docs-team @nlos-labs/design-team
+README.md @nlos-labs/docs-team
+CONTRIBUTING.md @nlos-labs/frontend-team
+
+# Testing
+*.test.ts @nlos-labs/frontend-team @nlos-labs/qa-team
+*.spec.ts @nlos-labs/frontend-team @nlos-labs/qa-team
+*.test.tsx @nlos-labs/frontend-team @nlos-labs/qa-team
+
+# Configuration Files
+package.json @nlos-labs/frontend-team
+tsconfig.json @nlos-labs/frontend-team
+vite.config.ts @nlos-labs/frontend-team
