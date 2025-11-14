@@ -14,7 +14,10 @@
     "test:coverage": "vitest run --coverage",
     "build": "tsc && vite build"
   },
-  "keywords": ["nlos", "nlos-design"],
+  "keywords": [
+    "nlos",
+    "nlos-design"
+  ],
   "author": "NLOS Labs",
   "license": "MIT",
   "devDependencies": {
